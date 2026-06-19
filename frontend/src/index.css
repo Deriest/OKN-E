@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        /* Defaults retained for shadcn components used on cream sections */
+        --background: 60 33% 97%;
+        --foreground: 145 35% 6%;
+        --card: 0 0% 100%;
+        --card-foreground: 145 35% 6%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 145 35% 6%;
+        --primary: 146 38% 52%;            /* leaf */
+        --primary-foreground: 145 50% 6%;
+        --secondary: 145 30% 95%;
+        --secondary-foreground: 145 35% 12%;
+        --muted: 145 12% 92%;
+        --muted-foreground: 145 10% 35%;
+        --accent: 25 64% 44%;              /* terracotta */
+        --accent-foreground: 60 33% 97%;
+        --destructive: 0 70% 45%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 145 15% 86%;
+        --input: 145 15% 86%;
+        --ring: 146 38% 42%;
+        --chart-1: 146 38% 52%;
+        --chart-2: 25 64% 44%;
+        --chart-3: 145 30% 28%;
+        --chart-4: 90 30% 70%;
+        --chart-5: 20 40% 60%;
+        --radius: 0.25rem;
+    }
+}
+
+@layer base {
+    * { @apply border-border; }
+    html { scroll-behavior: smooth; }
+    body {
+        margin: 0;
+        font-family: 'DM Sans', system-ui, sans-serif;
+        font-weight: 400;
+        background: #0a1a10;
+        color: #d8f3dc;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        overflow-x: hidden;
+    }
+    ::selection { background: #52b788; color: #0a1a10; }
+}
+
+/* Typography */
+@layer components {
+    .font-display { font-family: 'Cormorant Garamond', serif; font-weight: 300; }
+    .eyebrow {
+        @apply uppercase text-[10px] sm:text-[11px] tracking-eyebrow text-okn-leaf font-medium;
+    }
+    .eyebrow-sub { @apply text-okn-mint/60 italic font-display text-sm normal-case tracking-normal; }
+
+    .h-display {
+        font-family: 'Cormorant Garamond', serif;
+        font-weight: 300;
+        line-height: 1.02;
+        letter-spacing: -0.015em;
+    }
+    .h-display em { @apply text-okn-terracotta not-italic; font-style: italic; font-weight: 400; }
+
+    .lead-body { @apply font-sans text-base sm:text-lg text-okn-palemint/85 leading-relaxed; }
+
+    .grid-bg {
+        background-image:
+            linear-gradient(rgba(149,213,178,0.045) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(149,213,178,0.045) 1px, transparent 1px);
+        background-size: 64px 64px;
+    }
+    .noise::before {
+        content: '';
+        position: absolute; inset: 0; pointer-events: none;
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.6  0 0 0 0 0.7  0 0 0 0 0.6  0 0 0 0.06 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+        mix-blend-mode: overlay; opacity: .35;
+    }
+
+    .divider-warm {
+        height: 1px;
+        background: linear-gradient(90deg, #52b788 0%, #bc6c25 50%, transparent 100%);
+    }
+
+    .btn-leaf {
+        @apply inline-flex items-center gap-2 px-6 py-3 bg-okn-leaf text-okn-deep font-medium tracking-wide rounded-sm
+               transition-all duration-300 hover:bg-okn-mint hover:-translate-y-0.5 hover:shadow-[0_8px_24px_-12px_rgba(82,183,136,0.6)];
+    }
+    .btn-ghost-leaf {
+        @apply inline-flex items-center gap-2 px-6 py-3 border border-okn-leaf/40 text-okn-mint rounded-sm
+               transition-all duration-300 hover:border-okn-leaf hover:bg-okn-leaf/10 hover:text-okn-palemint;
+    }
+    .btn-terra {
+        @apply inline-flex items-center gap-2 px-6 py-3 bg-okn-terracotta text-okn-cream font-medium rounded-sm
+               transition-all duration-300 hover:bg-okn-sand hover:-translate-y-0.5;
+    }
+
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .9s ease, transform .9s ease; }
+    .reveal.in-view { opacity: 1; transform: translateY(0); }
+
+    .input {
+        @apply w-full bg-okn-deep border border-okn-leaf/20 rounded-sm px-4 py-3 text-okn-palemint
+               text-sm placeholder:text-okn-mint/30 focus:outline-none focus:border-okn-leaf transition-colors;
+    }
+    .input:focus { box-shadow: 0 0 0 3px rgba(82,183,136,0.15); }
+    select.input { @apply appearance-none cursor-pointer; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+    *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+}
+
+/* Stop ugly default focus while keeping accessible focus rings */
+:focus-visible { outline: 2px solid #52b788; outline-offset: 3px; border-radius: 2px; }
