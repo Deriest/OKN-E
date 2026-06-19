@@ -15,7 +15,6 @@ export const HERO = {
 };
 
 export const HOME = {
-  emergentLink: 'home-emergent-link',
   storyLink: 'home-story-link',
   solutionLink: 'home-solution-link',
   proofLink: 'home-proof-link',
