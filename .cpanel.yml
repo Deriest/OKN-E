@@ -1,5 +1,5 @@
 ---
 deployment:
-tasks:
-- export DEPLOYPATH=/home/octf1373/public_html
-- /bin/cp -r * $DEPLOYPATH
+  tasks:
+    - export DEPLOYPATH=/home/octf1373/public_html
+    - /bin/cp -R frontend/build/* $DEPLOYPATH
