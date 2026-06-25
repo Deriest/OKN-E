@@ -1,0 +1,133 @@
+{
+  "theme_and_archetype": {
+    "theme": "Dark",
+    "archetype": "1 (Organic & Earthy) & 5 (Luxury) Hybrid",
+    "description": "Premium, cinematic, evidence-led marketing site with deep roots in Indonesian geography. Balances the technical authority of an Apple product launch with the storytelling immersion of a National Geographic documentary."
+  },
+  "colors": {
+    "backgrounds": {
+      "base": "#0a1a10",
+      "section_alt": "#0f1e16",
+      "panel": "#1a3c2b",
+      "breath_section": "#f8faf6"
+    },
+    "accents": {
+      "primary": "#52b788",
+      "warm": "#bc6c25",
+      "mid_green": "#2d6a4f",
+      "sand": "#d4895a",
+      "clay": "#e8b48a"
+    },
+    "text": {
+      "primary_dark_bg": "#ffffff",
+      "secondary_dark_bg": "#95d5b2",
+      "faint_dark_bg": "#d8f3dc",
+      "primary_light_bg": "#0a1a10"
+    },
+    "gradients": {
+      "divider": "linear-gradient(to right, #52b788, #bc6c25, transparent)"
+    },
+    "rules": [
+      "Dark forest-green dominates. Cream is used sparingly for 1 or 2 'breath' sections per page.",
+      "Leaf (#52b788) is exclusively for CTAs, links, and key numbers.",
+      "Terracotta (#bc6c25) is used sparingly for emphasis words and dividers.",
+      "Never use Leaf for body text. Use Mint or White for contrast on dark backgrounds."
+    ]
+  },
+  "typography": {
+    "headings": {
+      "family": "Cormorant Garamond, serif",
+      "weights": ["300", "400"],
+      "styles": ["normal", "italic"],
+      "usage": "Large, elegant, airy. Use italic for specific emphasis words."
+    },
+    "body_ui": {
+      "family": "DM Sans, sans-serif",
+      "weights": ["300", "400", "500", "700"],
+      "usage": "Clean, crisp legibility for all body copy, UI elements, labels, and buttons."
+    },
+    "eyebrows_nav": {
+      "styling": "uppercase, tracking-[0.2em], text-[8px] to text-[10px]",
+      "usage": "Section labels, navigation items, and microcopy."
+    }
+  },
+  "layout_and_spacing": {
+    "grid": "Bento-style grids for data visualization and audience-path cards; full-bleed for immersive storytelling.",
+    "spacing": "Generous negative space (Tailwind p-16 to p-32 for sections). Let the typography and imagery breathe.",
+    "section_rhythm": "Dark dominant. Alternate between base canvas (#0a1a10) and section alt (#0f1e16), punctuated by a single cream (#f8faf6) section to reset visual pacing.",
+    "textures": "Use low-opacity background grids on dark sections. Integrate subtle soil and leaf textures."
+  },
+  "motion_and_animation": {
+    "signature_sequence": {
+      "name": "The Pressing",
+      "trigger": "Scroll-driven",
+      "description": "Opening hero entrance embodying the arc sea -> octopus -> soil. A five-armed octopus liquid-dissolves the sea into soil and presses its mark into the earth, resolving into the OKN logo.",
+      "implementation": "Treatment B: Layered parallax + canvas/particle morph at launch. Treatment C (Fallback/Mobile/Reduced Motion): Minimal particle resolve."
+    },
+    "general": {
+      "scroll": "Smooth scrolling (e.g., Lenis) is mandatory for the cinematic feel.",
+      "reveal": "Scale-chain staggered reveal animations for lists and cards.",
+      "data_viz": "Animated number counters. Animated bar charts (fixed-carbon comparison, yield results).",
+      "map": "Animated breathing Indonesia lungs map (SVG).",
+      "nav": "Sticky nav transparent over hero, transitioning to translucent-blur on scroll."
+    },
+    "reduced_motion": "Provide CSS or JS fallbacks for 'The Pressing' sequence and complex parallax for users preferring reduced motion."
+  },
+  "components": {
+    "buttons": {
+      "primary": "Leaf (#52b788) background or text with subtle hover states. Sharp or slightly rounded edges (max 4px).",
+      "cta_text": "'Lock It With Us'"
+    },
+    "nav": {
+      "style": "Glassmorphism on scroll (backdrop-blur-xl bg-[#0a1a10]/60). 1px subtle bottom border (#ffffff/10)."
+    },
+    "data_viz": {
+      "style": "Crisp, minimalist. Use Shadcn charts or Recharts. High contrast using Pine, Leaf, and Terracotta.",
+      "backgrounds": "Cardless or flat dark panels (#1a3c2b) with 1px borders."
+    },
+    "cards": {
+      "audience_path": "Clear segmented paths (CDR buyers / investors / government). Minimalist borders, hover lift (-translate-y-1), Terracotta accent on hover."
+    },
+    "dividers": {
+      "style": "Gradient divider: Leaf -> Terracotta -> transparent. Alternatively, faint biochar-octopus imprint."
+    },
+    "footer": {
+      "style": "Dark, massive spacing (py-32). Closing CTA band 'Lock It With Us'. Faint octopus imprint watermark."
+    }
+  },
+  "media_and_assets": {
+    "motifs": {
+      "mascot": "Stylised octopus with FIVE arms, rendered with biochar/charcoal texture pressed into dark soil.",
+      "usage": "Recurring motif: loader, faint dividers, footer watermark."
+    },
+    "imagery_style": "Full-bleed, cinematic, Indonesian geography focused ('Zamrud Khatulistiwa — the Emerald of the Equator'). No generic eco imagery.",
+    "image_urls": [
+      {
+        "category": "hero_background",
+        "url": "https://images.pexels.com/photos/7955907/pexels-photo-7955907.jpeg",
+        "description": "Bali's dense, lush jungle canopy. Deep green, cinematic lighting."
+      },
+      {
+        "category": "texture_soil",
+        "url": "https://images.pexels.com/photos/7232905/pexels-photo-7232905.jpeg",
+        "description": "Close-up macro photography of dark, damp soil texture."
+      },
+      {
+        "category": "texture_charcoal",
+        "url": "https://images.pexels.com/photos/36616863/pexels-photo-36616863.jpeg",
+        "description": "High-resolution close-up of charred wood/biochar texture. Use for octopus texture."
+      }
+    ]
+  },
+  "testing": {
+    "requirements": "All interactive and key informational elements MUST include a data-testid attribute (e.g., data-testid='hero-cta-button')."
+  },
+  "instructions_to_main_agent": [
+    "Strictly adhere to the FIXED color palette and typography (Cormorant Garamond + DM Sans). Do not introduce new colors or fonts.",
+    "Implement 'The Pressing' sequence using Framer Motion for scroll-driven animations and parallax.",
+    "Ensure the sticky nav has a transparent background initially, transitioning to a translucent blur when scrolling past the hero section.",
+    "Build the 6 pages: Home, The Solution, The Proof, The Opportunity, Our Story, Partner With Us.",
+    "Use raw HTML/Tailwind for complex marketing layouts, and heavily customized Shadcn components for UI elements (forms, charts).",
+    "Integrate the provided image URLs. Do NOT use placeholder text or dummy image services."
+  ]
+}
